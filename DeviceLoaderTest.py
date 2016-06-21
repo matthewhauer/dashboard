@@ -9,7 +9,8 @@ class TestDeviceLoader(unittest.TestCase):
         device_list = service.load_file("exampleDevices.json")
         self.assertIsNotNone(device_list)
         self.assertEqual(len(device_list), 3, msg="Incorrect number of devices")
-        self.assertTrue(isinstance(device_list[0], Device), msg="Device list not of Device instances")
+        for device in device_list:
+            self.assertTrue(isinstance(device, Device), msg="Device list item not a Device instance")
     pass
 
 

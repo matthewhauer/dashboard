@@ -28,8 +28,9 @@ class DeviceLoader:
         # should convert the_json into an actual object....
         devices = []
         for device in the_json:
-            if '__type__' in device and device['__type__'] is "Device":
-                devices.append(self.build_device(device))
+            if '__type__' in device:
+                if device['__type__'] == "Device":
+                    devices.append(self.build_device(device))
             pass
         return devices
 
