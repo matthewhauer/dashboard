@@ -1,59 +1,73 @@
 [
-	{
-		"name": "V6",
-		"actuator": {
-			"name": "valve_6",
-			"lockout": 1000
-		}
-	},
-	{
-		"name": "LOX Vent",
-		"sensors": [
-			{
-				"type": "pressure",
-				"units": "psi",
-				"speed": "realtime",
-				"log": {
-					"filename": "lox_vent_pressure.csv"
-				}
-			},
-			{
-				"type": "valve",
-				"speed": "onchange",
-				"log": {
-					"filename": "lox_vent_valve_sensor.csv"
-				}
-			}
-		],
-		"actuator": {
-			"name": "LOX Vent Valve",
-			"lockout": 3000,
-			"log": {
-				"filename": "lox_vent_valve_events.csv"
-			}
-		}
-	},
-	{
-		"name": "LOX Tank",
-		"sensors": [
-			{
-				"type": "pressure",
-				"units": "psi",
-				"speed": "realtime",
-				"alarm": ["> 240 psi", "< 30psi"],
-				"log": {
-					"filename": "lox_tank_pressure.csv"
-				}
-			},
-			{
-				"type": "temperature",
-				"units": "degK",
-				"speed": "realtime",
-				"alarm": ["> 160 K"],
-				"log": {
-					"filename": "lox_tank_pressure.csv"
-				}
-			}
-		]
-	}
+  {
+    "__type__": "Device",
+    "name": "V6",
+    "actuator": {
+      "__type__": "Actuator",
+      "name": "valve_6",
+      "lockout": 1000
+    }
+  },
+  {
+    "__type__": "Device",
+    "name": "LOX Vent",
+    "sensors": [
+      {
+        "__type__": "Sensor",
+        "type": "pressure",
+        "units": "psi",
+        "speed": "realtime",
+        "log": {
+          "__type__": "DashboardLogger",
+          "filename": "lox_vent_pressure.csv"
+        }
+      },
+      {
+        "__type__": "Sensor",
+        "type": "valve",
+        "speed": "onchange",
+        "log": {
+          "__type__": "DashboardLogger",
+          "filename": "lox_vent_valve_sensor.csv"
+        }
+      }
+    ],
+    "actuator": {
+      "__type__": "Actuator",
+      "name": "LOX Vent Valve",
+      "lockout": 3000,
+      "log": {
+        "__type__": "DashboardLogger",
+        "filename": "lox_vent_valve_events.csv"
+      }
+    }
+  },
+  {
+    "__type__": "Device",
+    "name": "LOX Tank",
+    "sensors": [
+      {
+        "__type__": "Sensor",
+        "type": "pressure",
+        "units": "psi",
+        "speed": "realtime",
+        "alarm": ["> 240 psi", "< 30psi"],
+        "log": {
+          "__type__": "DashboardLogger",
+          "filename": "lox_tank_pressure.csv"
+        }
+      },
+      {
+        "__type__": "Sensor",
+        "type": "temperature",
+        "units": "degK",
+        "speed": "realtime",
+        "alarm": ["> 160 K"],
+        "log": {
+          "__type__": "DashboardLogger",
+          "filename": "lox_tank_pressure.csv"
+        }
+      }
+    ]
+  }
 ]
