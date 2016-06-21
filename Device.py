@@ -1,11 +1,10 @@
 class Device:
-    name = ''
-    sensors = []
-    draw_state = {}
-    actuator = None
-
     def __init__(self):
-        geometry = {}
+        self.geometry = {}
+        self.name = ''
+        self.sensors = []
+        self.draw_state = {}
+        self.actuator = None
         self.draw_state["pos_x"] = 0
         self.draw_state["pos_y"] = 0
 
