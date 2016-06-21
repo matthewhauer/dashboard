@@ -1,5 +1,5 @@
 import json
-
+from Device import Device
 
 class DeviceLoader:
     def __init__(self):
@@ -8,9 +8,13 @@ class DeviceLoader:
     def load_file(self, filepath):
         the_file = open(filepath, 'r')
         the_json = json.load(the_file)
-        print(the_json)
         # should convert the_json into an actual object....
-        return the_json
+        devices = []
+        for device in the_json:
+            devices.append(Device())
+            pass
+        return devices
+
 
     pass
 
