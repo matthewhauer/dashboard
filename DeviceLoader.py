@@ -26,11 +26,12 @@ class DeviceLoader:
         the_file = open(filepath, 'r')
         the_json = json.load(the_file)
         # should convert the_json into an actual object....
-        devices = []
+        devices = {}
         for device in the_json:
             if '__type__' in device:
                 if device['__type__'] == "Device":
-                    devices.append(self.build_device(device))
+                    d = self.build_device(device)
+                    devices[d.name] = d
             pass
         return devices
 
