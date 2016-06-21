@@ -1,14 +1,13 @@
 class Device:
-    def __init__(self):
-        name = ''
-        geometry = {}
-        sensors = []
+	def __init__(self):
+		name = ''
+		geometry = {}
+		sensors = []
 		actuator = None
-		drawState = {
-			posX: 0,
-			posY: 0
-		}
-    pass
+		draw_state = {}
+		draw_state.pos_x = 0
+		draw_state.pos_y = 0
+
 
 DeviceStates = ['NOMINAL', 'WARNING', 'ERROR', 'DISABLED',
 	'VALVE-OPEN', 'VALVE-CLOSED', 'CHANGING']
@@ -18,6 +17,9 @@ class Sensor:
 		name = ''
 		connection = {}
 		unit = ''
-		log = {logSize = 0, data = []}
-		
-pass
+		log = {}
+		log.log_size = 0
+		log.data = []
+
+# EOF
+
