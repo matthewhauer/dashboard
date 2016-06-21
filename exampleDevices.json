@@ -8,7 +8,7 @@
 	},
 	{
 		"name": "LOX Vent",
-		"sensor": [
+		"sensors": [
 			{
 				"type": "pressure",
 				"units": "psi",
@@ -35,7 +35,7 @@
 	},
 	{
 		"name": "LOX Tank",
-		"sensor": [
+		"sensors": [
 			{
 				"type": "pressure",
 				"units": "psi",
