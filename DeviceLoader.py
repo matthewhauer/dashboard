@@ -6,9 +6,13 @@ class DeviceLoader:
         pass
 
     def build_sensor(self, device, the_json):
-        pass
+        s = {}
+        device.sensors.append(s)
 
     def build_actuator(self, device, the_json):
+        device.actuator = {}
+        if 'name' in the_json:
+            device.actuator['name'] = the_json['name']
         pass
 
     def build_device(self, the_json):
@@ -17,9 +21,10 @@ class DeviceLoader:
             d.name = the_json["name"]
         if "sensors" in the_json:
             for sensor in the_json["sensors"]:
-                self.build_sensor(d, the_json)
+                if '__type__' in sensor and sensor['__type__'] == 'Sensor':
+                    self.build_sensor(d, sensor)
         if "actuator" in the_json:
-            self.build_actuator(d, the_json)
+            self.build_actuator(d, the_json["actuator"])
         return d
 
     def load_file(self, filepath):
@@ -35,7 +40,5 @@ class DeviceLoader:
             pass
         return devices
 
-
-    pass
 
 # EOF
