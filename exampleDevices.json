@@ -1,57 +1,57 @@
 [
 	{
-		'name': 'V6'
-		'actuator': {
-			'name': 'valve_6',
-			'lockout': 1000
+		"name": "V6",
+		"actuator": {
+			"name": "valve_6",
+			"lockout": 1000
 		}
 	},
 	{
-		'name': 'LOX Vent',
-		'sensor': [
+		"name": "LOX Vent",
+		"sensor": [
 			{
-				'type': 'pressure',
-				'units': 'psi'
-				'speed': 'realtime'
-				'log': {
-					'filename': 'lox_vent_pressure.csv'
+				"type": "pressure",
+				"units": "psi",
+				"speed": "realtime",
+				"log": {
+					"filename": "lox_vent_pressure.csv"
 				}
 			},
 			{
-				'type': 'valve',
-				'speed': 'onchange',
-				'log': {
-					'filename': 'lox_vent_valve_sensor.csv'
+				"type": "valve",
+				"speed": "onchange",
+				"log": {
+					"filename": "lox_vent_valve_sensor.csv"
 				}
 			}
 		],
-		'actuator': {
-			'name': 'LOX Vent Valve',
-			'lockout': 3000,
-			'log': {
-				'filename': 'lox_vent_valve_events.csv'
+		"actuator": {
+			"name": "LOX Vent Valve",
+			"lockout": 3000,
+			"log": {
+				"filename": "lox_vent_valve_events.csv"
 			}
 		}
 	},
 	{
-		'name': 'LOX Tank',
-		'sensor': [
+		"name": "LOX Tank",
+		"sensor": [
 			{
-				'type': 'pressure',
-				'units': 'psi'
-				'speed': 'realtime'
-				'alarm': ['> 240 psi', '< 30psi']
-				'log': {
-					'filename': 'lox_tank_pressure.csv'
+				"type": "pressure",
+				"units": "psi",
+				"speed": "realtime",
+				"alarm": ["> 240 psi", "< 30psi"],
+				"log": {
+					"filename": "lox_tank_pressure.csv"
 				}
 			},
 			{
-				'type': 'temperature',
-				'units': 'degK'
-				'speed': 'realtime'
-				'alarm': ['> 160 K']
-				'log': {
-					'filename': 'lox_tank_pressure.csv'
+				"type": "temperature",
+				"units": "degK",
+				"speed": "realtime",
+				"alarm": ["> 160 K"],
+				"log": {
+					"filename": "lox_tank_pressure.csv"
 				}
 			}
 		]
